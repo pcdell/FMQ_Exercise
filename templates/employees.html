@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <h1>Employee Insights</h1>
+
+    <h2>Employees Sales Volume</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Employee Number</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Sales Volume</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sales in sales_volume %}
+                <tr>
+                    <td>{{ sales.employee_number }}</td>
+                    <td>{{ sales.firstName }}</td>
+                    <td>{{ sales.lastName }}</td>
+                    <td>{{ sales.sales_volume }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Employees Purchase Frequency</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Employee Number</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Purchase Frequency</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for purchases in freq_of_purchases %}
+                <tr>
+                    <td>{{ purchases.employee_number }}</td>
+                    <td>{{ purchases.firstName }}</td>
+                    <td>{{ purchases.lastName }}</td>
+                    <td>{{ purchases.purchase_frequency }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Employees for Promotion</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Employee Number</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Promotion Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for promotion in promotion %}
+                <tr>
+                    <td>{{ promotion.employee_number }}</td>
+                    <td>{{ promotion.firstName }}</td>
+                    <td>{{ promotion.lastName }}</td>
+                    <td>{{ promotion.promotion_score }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

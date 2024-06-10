@@ -1,0 +1,9 @@
+services:
+  app:
+    build: .
+    container_name: fmq_exercise
+    network_mode: host
+    restart: on-failure
+    env_file:
+      - .env
+    command: ./startup.sh

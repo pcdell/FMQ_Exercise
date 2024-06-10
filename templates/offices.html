@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="container">
+        <h1>Offices</h1>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Office Code
+                        <a href="?sort_by=office_code&sort_order={{ 'Asc' if sort_order == 'desc' or sort_by != 'office_code' else 'desc' }}" class="btn btn-xxs btn-outline-secondary">
+                            {{ 'Asc' if sort_order == 'desc' or sort_by != 'office_code' else 'Desc' }}
+                        </a>
+                        </th>
+                        <th scope="col">City
+                            <a href="?sort_by=city&sort_order={{ 'A-Z' if sort_order == 'desc' or sort_by != 'city' else 'desc' }}" class="btn btn-xxs btn-outline-secondary">
+                                {{ 'A-Z' if sort_order == 'desc' or sort_by != 'city' else 'Z-A' }}
+                            </a>
+                        </th>
+                        <th scope="col">Number of Employees
+                            <a href="?sort_by=num_employees&sort_order={{ 'asc' if sort_order == 'desc' or sort_by != 'num_employees' else 'desc' }}" class="btn btn-xxs btn-outline-secondary">
+                                {{ 'Asc' if sort_order == 'desc' or sort_by != 'num_employees' else 'Desc' }}
+                            </a>
+                        </th>
+                        <th scope="col">Number of Customers
+                            <a href="?sort_by=num_customers&sort_order={{ 'asc' if sort_order == 'desc' or sort_by != 'num_customers' else 'desc' }}" class="btn btn-xxs btn-outline-secondary">
+                                {{ 'Asc' if sort_order == 'desc' or sort_by != 'num_customers' else 'Desc' }}
+                            </a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for detail in office_details %}
+                    <tr>
+                        <td>{{ detail.office.officeCode }}</td>
+                        <td>{{ detail.office.city }}</td>
+                        <td>{{ detail.num_employees }}</td>
+                        <td>{{ detail.num_customers }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        <div>
+    <div>
+{% endblock %}

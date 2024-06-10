@@ -1,0 +1,12 @@
+.container {
+    padding-top: 20px;
+}
+h1, h2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Vertical alignment of table cells */
+.table td, .table th { 
+    vertical-align: middle;
+}
